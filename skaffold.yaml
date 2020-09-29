@@ -11,7 +11,7 @@ build:
     - image: nsr2412/auth
       context: auth
       docker:
-        dockerfile: dockerfile
+        dockerfile: Dockerfile
       sync:
         manual:
           - src: 'src/**/*.ts'
@@ -23,4 +23,12 @@ build:
       sync:
         manual:
           - src: '**/*.js'
+            dest: .
+    - image: nsr2412/tickets
+      context: tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
             dest: .
